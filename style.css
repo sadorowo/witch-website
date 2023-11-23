@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;900&display=swap');
+
+:root {
+    --bg: rgb(104, 46, 46);
+    --bg-lighter: rgb(255, 112, 115);
+    --scrollbar: rgb(255, 205, 205);
+    --info-block-bg: #c07f7f;
+    --info-block-border: 10px;
+}
+
+* {
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    font-family: 'Merriweather', serif;
+    background: url(background.png) no-repeat center center fixed;
+    background-color: var(--bg);
+    transition: ease-in-out .2s;
+    background-size: cover;
+    overflow: hidden;
+    margin: 0;
+}
+
+body.lighter {
+    background-color: var(--bg-lighter);
+    filter: invert();
+}
+
+body.lighter>footer {
+    color: #000;
+}
+
+body h1:first-child {
+    color: #fff;
+    text-align: center;
+}
+
+#container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.info-block {
+    background-color: var(--info-block-bg);
+    border-radius: var(--info-block-border);
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+    max-height: 40vw;
+    overflow: auto;
+    padding: 20px;
+    margin: 10px;
+}
+
+#witch {
+    filter: invert();
+}
+
+#information-container {
+    position: absolute;
+}
+
+footer {
+    position: absolute;
+    color: #fff;
+    bottom: 0;
+}
+
+::-webkit-scrollbar {
+    width: 3px;
+    height: 3px;
+}
+
+::-webkit-scrollbar-button {
+    width: 0px;
+    height: 0px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--scrollbar);
+    border-radius: 50px;
+    border: none;
+}
+
+::-webkit-scrollbar-track {
+    background: #666666;
+    border-radius: 50px;
+    border: none;
+}
+
+::-webkit-scrollbar-track:hover {
+    background: #666666;
+}
+
+::-webkit-scrollbar-track:active {
+    background: #333333;
+}
+
+::-webkit-scrollbar-corner {
+    background: transparent;
+}

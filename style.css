@@ -5,6 +5,7 @@
     --bg-lighter: rgb(255, 112, 115);
     --scrollbar: rgb(255, 205, 205);
     --info-block-bg: #c07f7f;
+    --second-color: #e7ffc1;
     --info-block-border: 10px;
 }
 
@@ -29,50 +30,66 @@ body {
     margin: 0;
 }
 
-body.lighter {
-    background-color: var(--bg-lighter);
-    filter: invert();
+#loading-container {
+    transform: translate(-50%, -50%);
+    transition: ease-in-out .3s;
+    position: absolute;
+    color: white;
+    opacity: 1;
+    left: 50%;
+    top: 50%;
 }
 
-body.lighter>footer {
-    color: #000;
-}
-
-body h1:first-child {
-    color: #fff;
-    text-align: center;
+#difference {
+    color: var(--second-color);
 }
 
 #container {
-    display: flex;
-    flex-direction: row;
+    transition: ease-in-out .3s;
     justify-content: center;
+    flex-direction: column;
     align-items: center;
-    width: 100%;
+    display: flex;
     height: 100%;
+    width: 100%;
+    opacity: 0;
 }
 
-.info-block {
+#container>* {
+    color: white;
+    text-align: center;
     background-color: var(--info-block-bg);
-    border-radius: var(--info-block-border);
-    height: 50%;
-    overflow: auto;
-    padding: 20px;
+    max-width: 50%;
+    padding: 15px;
+    margin: 5px;
+}
+
+#facts-block {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+    max-width: 50%;
+}
+
+.arrow-button {
+    width: 50px;
     margin: 10px;
+    cursor: pointer;
+    border-radius: 100%;
+    color: var(--second-color);
+}
+
+.arrow-button[data-left] {
+    float: left;
+}
+
+.arrow-button[data-right] {
+    float: right;
 }
 
 #witch {
     filter: invert();
-}
-
-#information-container {
-    position: absolute;
-}
-
-footer {
-    position: absolute;
-    color: #fff;
-    bottom: 0;
 }
 
 ::-webkit-scrollbar {
@@ -110,22 +127,15 @@ footer {
 }
 
 @media screen and (max-width: 978px) {
-    #container {
-        flex-direction: column;
-        overflow-y: hidden;
-        flex-wrap: wrap;
-    }
-
     .info-block {
         max-height: 50%;
     }
 
-    footer {
-        display: none;
+    #container>* {
+        max-width: unset;
     }
 
-    body {
-        overflow-y: hidden;
-        overflow-x: auto;
+    #facts-block {
+        max-width: unset;
     }
 }

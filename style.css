@@ -66,26 +66,32 @@ body {
 
 #facts-block {
     display: flex;
+    position: relative;
     align-items: center;
     flex-direction: row;
     justify-content: center;
-    max-width: 50%;
+    width: 35%;
+}
+
+#fact {
+    margin: 0 10px 0 10px;
 }
 
 .arrow-button {
     width: 50px;
     margin: 10px;
     cursor: pointer;
+    position: absolute;
     border-radius: 100%;
     color: var(--second-color);
 }
 
 .arrow-button[data-left] {
-    float: left;
+    left: 0;
 }
 
 .arrow-button[data-right] {
-    float: right;
+    right: 0;
 }
 
 #witch {
@@ -128,7 +134,7 @@ body {
 
 @media screen and (max-width: 978px) {
     .info-block {
-        max-height: 50%;
+        height: 50%;
     }
 
     #container>* {
@@ -136,6 +142,6 @@ body {
     }
 
     #facts-block {
-        max-width: unset;
+        width: auto;
     }
 }
